@@ -47,7 +47,12 @@ app.get('/index' , (req, res) => {
 app.get('/index/new', (req, res)=>{
   res.render('new.ejs')
 })
-
+app.post('/index', (req, res)=>{
+  res.send(req.body)
+})
+// app.get('/index/seed', (req, res)=>{
+//
+// })
 
 
 
