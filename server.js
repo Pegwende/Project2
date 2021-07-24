@@ -7,6 +7,7 @@ const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
 require('dotenv').config()
+const List = require('./models/lists.js')
 //___________________
 //Port
 //___________________
