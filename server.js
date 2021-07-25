@@ -106,6 +106,11 @@ app.get('/index/seed', (req, res)=>{
   )
 })
 
+app.delete('/index/:id', (req, res)=>{
+  List.findByIdAndRemove(req.params.id, (error, data)=>{
+    res.redirect('/index')
+  })
+})
 
 
 
