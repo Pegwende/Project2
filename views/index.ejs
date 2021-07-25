@@ -6,9 +6,19 @@
   </head>
   <body>
     <h1>YOUR DAILY HELP! YOUR HELPER</h1><br>
+
+
     <h2>TO-DO-LIST</h2>
     <p>Increases productivity: A to do list allows you to prioritize the tasks that are more important. This means you don't waste time on tasks that don't require your immediate attention. Your list will help you stay focused on the tasks that are the most important.</p>
+    <ul>
+      <% for(let i=0; i<lists.length; i++){%>
+      <a href="/index/<%=lists[i].id%>/edit"> <li> GO <%=lists[i].task%>  At <%=lists[i].time%> </li></a>
+        <%}%>
+    </ul>
     <a href="index/new"><input type="submit" name="" value="ADD TO-DO-LIST"><br></a>
+
+
+
     <h2>YOUR FAVORITES QUOTES</h2>
     <p>To reinforce your ideas: The main reason to quote material in your speech is to reinforce your words. A quotation offers a second voice that echoes your thoughts, beliefs, and claims. They said it better: Quotations provide a better way of saying things. They give you a more concise, memorable phrasing for an idea</p>
     <a href="#"><input type="submit" name="" value="GO to QUOTES"></a><br>

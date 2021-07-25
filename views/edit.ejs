@@ -6,6 +6,11 @@
   </head>
   <body>
     <h1>Edit Page</h1>
+    <form class="" action="/index/<%=list.id%>?_method=PUT" method="POST">
+      TASK:  <input type="text" name="task" placeholder="<%=list.task%>"><br>
+      TIME:  <input type="text" name="time" placeholder="<%=list.time%>"><br><br>
+      <input type="submit" name="" value="DONE">
+    </form>
 
   </body>
 </html>

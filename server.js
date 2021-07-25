@@ -4,7 +4,7 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
-const app = express ();
+const app = express();
 const db = mongoose.connection;
 require('dotenv').config()
 const List = require('./models/lists.js')
@@ -42,18 +42,70 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 app.get('/index' , (req, res) => {
-  res.render('index.ejs');
+  List.find({}, (error, allLists)=>{
+    res.render(
+      'index.ejs',
+      {
+        lists: allLists
+      }
+     );
+  })
 });
 
 app.get('/index/new', (req, res)=>{
   res.render('new.ejs')
 })
+
+
+
 app.post('/index', (req, res)=>{
-  res.send(req.body)
+  List.create(req.body, (error, createdList)=>{
+  res.redirect('/index')
 })
-// app.get('/index/seed', (req, res)=>{
-//
-// })
+})
+
+
+app.get('/index/:id/edit', (req, res)=>{
+  List.findById(req.params.id, (error, foundList)=>{
+    res.render(
+      'edit.ejs',
+      {
+        list:foundList
+      })
+  })
+})
+
+
+app.put('/index/:id', (req, res)=>{
+  List.findByIdAndUpdate(req.params.id, req.body, (error, updatedList)=>{
+    res.redirect('/index')
+  })
+})
+
+
+
+app.get('/index/seed', (req, res)=>{
+  List.create(
+    [
+      {
+        task: 'visit my friend',
+        time: 13
+      },
+      {
+        task: 'Go Sleep',
+        time: 10
+      },
+      {
+        task: 'eat',
+        time: 12
+      }
+    ],
+    (error, data)=>{
+      res.redirect('/index')
+    }
+  )
+})
+
 
 
 
