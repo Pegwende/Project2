@@ -82,7 +82,14 @@ app.put('/index/:id', (req, res)=>{
   })
 })
 
-
+app.get('/index/:id', (req, res)=>{
+  List.findById(req.params.id, (error, foundList)=>{
+    res.render('show.ejs',
+      {
+        lists:foundList
+      })
+  })
+})
 
 app.get('/index/seed', (req, res)=>{
   List.create(

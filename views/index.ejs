@@ -12,13 +12,8 @@
     <p>Increases productivity: A to do list allows you to prioritize the tasks that are more important. This means you don't waste time on tasks that don't require your immediate attention. Your list will help you stay focused on the tasks that are the most important.</p>
     <ul>
       <% for(let i=0; i<lists.length; i++){%>
-      <a href="/index/<%=lists[i].id%>/edit"> <li> GO <%=lists[i].task%>  At <%=lists[i].time%> </li></a>
-
-      <form class="" action="/index/<%=lists[i].id%>?_method=DELETE" method="POST">
-        <input type="submit" name="" value="DELETE">
-      </form><br>
-
-        <%}%>
+      <a href="/index/<%=lists[i].id%>"> <li> GO <%=lists[i].task%>  At <%=lists[i].time%> </li></a><br>
+      <%}%>
     </ul>
     <a href="index/new"><input type="submit" name="" value="ADD TO-DO-LIST"><br></a>
 
