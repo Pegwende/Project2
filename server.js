@@ -8,6 +8,7 @@ const app = express();
 const db = mongoose.connection;
 require('dotenv').config()
 const List = require('./models/lists.js')
+const listsController = require('./controllers/list.js')
 //___________________
 //Port
 //___________________
@@ -37,96 +38,12 @@ app.use(express.urlencoded({ extended: false }));// extended: false - does not a
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use('/index', listsController)
 //___________________
 // Routes
 //___________________
 //localhost:3000
-app.get('/index' , (req, res) => {
-  List.find({}, (error, allLists)=>{
-    res.render(
-      'index.ejs',
-      {
-        lists: allLists
-      }
-     );
-  })
-});
 
-app.get('/index/new', (req, res)=>{
-  res.render('new.ejs')
-})
-
-
-
-app.post('/index', (req, res)=>{
-  List.create(req.body, (error, createdList)=>{
-  res.redirect('/index')
-})
-})
-
-
-app.get('/index/:id/edit', (req, res)=>{
-  List.findById(req.params.id, (error, foundList)=>{
-    res.render(
-      'edit.ejs',
-      {
-        list:foundList
-      })
-  })
-})
-
-
-app.put('/index/:id', (req, res)=>{
-  List.findByIdAndUpdate(req.params.id, req.body, (error, updatedList)=>{
-    res.redirect('/index')
-  })
-})
-
-
-
-app.get('/index/seed', (req, res)=>{
-  List.create(
-    [
-      {
-        task: 'visit my friend',
-        time: '13 AM'
-      },
-      {
-        task: 'Go Sleep',
-        time: '10 PM'
-      },
-      {
-        task: 'eat',
-        time: '12 PM'
-      }
-    ],
-    (error, data)=>{
-      if(error){
-        console.log(error);
-      } else{
-          res.redirect('/index')
-      }
-
-    }
-  )
-})
-
-
-app.get('/index/:id', (req, res)=>{
-  List.findById(req.params.id, (error, foundList)=>{
-    res.render('show.ejs',
-      {
-        lists:foundList
-      })
-  })
-})
-
-
-app.delete('/index/:id', (req, res)=>{
-  List.findByIdAndRemove(req.params.id, (error, data)=>{
-    res.redirect('/index')
-  })
-})
 
 
 
