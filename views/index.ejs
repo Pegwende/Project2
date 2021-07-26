@@ -7,15 +7,25 @@
   <body>
     <h1>YOUR DAILY HELP! YOUR HELPER</h1><br>
 
+    <div class="container">
+      <h2>My To Do List</h2>
+      <p>Increases productivity: A to do list allows you to prioritize the tasks that are more important. This means you don't waste time on tasks that don't require your immediate attention. Your list will help you stay focused on the tasks that are the most important.</p>
+    </div>
 
-    <h2>TO-DO-LIST</h2>
-    <p>Increases productivity: A to do list allows you to prioritize the tasks that are more important. This means you don't waste time on tasks that don't require your immediate attention. Your list will help you stay focused on the tasks that are the most important.</p>
-    <ul>
-      <% for(let i=0; i<lists.length; i++){%>
-      <a href="/index/<%=lists[i].id%>"> <li> GO <%=lists[i].task%>  At <%=lists[i].time%> </li></a><br>
-      <%}%>
-    </ul>
-    <a href="index/new"><input type="submit" name="" value="ADD TO-DO-LIST"><br></a>
+    <div class="container2">
+      <ul>
+        <% for(let i=0; i<lists.length; i++){%>
+          <div class="list">
+            <a href="/index/<%=lists[i].id%>"> <li> GO: <%=lists[i].task%>  At: <%=lists[i].time%> </li></a><br>
+          </div>
+        <%}%>
+      </ul>
+      <a href="index/new"><input type="submit" name="time" value="ADD TO-DO-LIST"><br></a>
+    </div>
+
+
+
+
 
 
 

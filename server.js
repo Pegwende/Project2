@@ -82,6 +82,36 @@ app.put('/index/:id', (req, res)=>{
   })
 })
 
+
+
+app.get('/index/seed', (req, res)=>{
+  List.create(
+    [
+      {
+        task: 'visit my friend',
+        time: '13 AM'
+      },
+      {
+        task: 'Go Sleep',
+        time: '10 PM'
+      },
+      {
+        task: 'eat',
+        time: '12 PM'
+      }
+    ],
+    (error, data)=>{
+      if(error){
+        console.log(error);
+      } else{
+          res.redirect('/index')
+      }
+
+    }
+  )
+})
+
+
 app.get('/index/:id', (req, res)=>{
   List.findById(req.params.id, (error, foundList)=>{
     res.render('show.ejs',
@@ -91,27 +121,6 @@ app.get('/index/:id', (req, res)=>{
   })
 })
 
-app.get('/index/seed', (req, res)=>{
-  List.create(
-    [
-      {
-        task: 'visit my friend',
-        time: 13
-      },
-      {
-        task: 'Go Sleep',
-        time: 10
-      },
-      {
-        task: 'eat',
-        time: 12
-      }
-    ],
-    (error, data)=>{
-      res.redirect('/index')
-    }
-  )
-})
 
 app.delete('/index/:id', (req, res)=>{
   List.findByIdAndRemove(req.params.id, (error, data)=>{
