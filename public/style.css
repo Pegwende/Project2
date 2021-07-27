@@ -1,3 +1,105 @@
 body{
+  background-color: white;
+  font-family: 'Indie Flower', cursive;
+}
+
+.header h1{
+  font-size: 70px;
+  text-decoration: underline;
+}
+
+.header h2{
+  font-size: 50px;
+}
+
+.header img{
+  border-radius: 20px;
+  margin: -50px 0px 0px 0px;
+  width: 500px;
+  height: 80px;
+}
+
+.all{
+  margin-bottom: 500px;
+}
+
+.container{
+  text-align: center;
+}
+
+h1{
+  border-radius: 50px;
+  text-align: center;
   background-color: red;
+  height: 200px;
+  margin-top: 0px;
+}
+
+
+
+.list{
+  background-color: rgba(200, 20, 30,.5);
+  border: 1px solid grey;
+  margin: 20px 180px;
+  border-radius: 20px;
+}
+
+
+.container2 a{
+  text-align: center;
+}
+
+
+.title{
+  background-color: red;
+  border-radius: 30px;
+  font-size: 30px;
+}
+
+ul{
+  text-align: center;
+  list-style-type: circle;
+  text-decoration-style: solid;
+  text-decoration: none;
+}
+
+.btn{
+  background-color: rgba(300, 0, 0, 1);
+  text-align: center;
+}
+
+#remove{
+  text-decoration: none;
+}
+
+.list li{
+  list-style-type: none;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+p{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+footer{
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  margin: 50px auto;
+  background-color: red;
+  margin-bottom: 0;
+}
+
+i{
+  margin-top: 40px;
+  height: 300px;
+  width: 10px;
+  color: white;
+}
+
+i{
+  height: 100px;
+  width: 100px;
 }

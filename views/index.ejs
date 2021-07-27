@@ -3,37 +3,87 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://kit.fontawesome.com/9ce035eb28.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
   </head>
   <body>
-    <h1>YOUR DAILY HELP! YOUR HELPER</h1><br>
 
-    <div class="container">
-      <h2>My To Do List</h2>
-      <p>Increases productivity: A to do list allows you to prioritize the tasks that are more important. This means you don't waste time on tasks that don't require your immediate attention. Your list will help you stay focused on the tasks that are the most important.</p>
-    </div>
 
-    <div class="container2">
-      <ul>
-        <% for(let i=0; i<lists.length; i++){%>
-          <div class="list">
-            <a href="/index/<%=lists[i].id%>"> <li> GO: <%=lists[i].task%>  At: <%=lists[i].time%> </li></a><br>
+      <div class="container">
+
+
+        <div class="header">
+          <div class="">
+            <h1>YOUR DAILY HELP! YOUR HELPER</h1><br>
+          </div><br>
+          <img src="https://professionalgrowthsystems.com/wp-content/uploads/2014/09/Plan-copy.jpg" alt="">
+          <div>
+            <div class="title">
+              <h2>My To Do List</h2>
+            </div>
+            <p>Increases productivity: A to do list allows you to prioritize the tasks that are more important. This means you don't waste time on tasks that don't require your immediate attention. Your list will help you stay focused on the tasks that are the most important.</p>
           </div>
-        <%}%>
-      </ul>
-      <a href="index/new"><input type="submit" name="time" value="ADD TO-DO-LIST"><br></a>
-    </div>
+        </div>
+
+          <div class="title">
+            <h2>Today</h2>
+          </div>
+
+
+
+        <div box1>
+          <div class="listBox">
+            <ul>
+              <% for(let i=0; i<lists.length; i++){%>
+                <div class="list">
+                  <a id="remove" href="/index/<%=lists[i].id%>">  <li>TASK: <%=lists[i].task%> <br> <br> TIME: <%=lists[i].time%> </li></a><br>
+                </div>
+              <%}%>
+            </ul>
+          </div>
+          <a href="index/new"><input class="btn" type="submit" name="time" value="ADD TO-DO-LIST"><br></a>
+        </div>
 
 
 
 
+        <div class="box2">
+          <div class="title">
+            <h2>YOUR FAVORITES QUOTES</h2>
+          </div>
+          <p>To reinforce your ideas: The main reason to quote material in your speech is to reinforce your words. A quotation offers a second voice that echoes your thoughts, beliefs, and claims. They said it better: Quotations provide a better way of saying things. They give you a more concise, memorable phrasing for an idea</p>
+          <a href="#"><input class="btn" type="submit" name="" value="GO to QUOTES"></a>
+        </div>
+
+        <div class="box3">
+          <div class="title">
+            <h2>BIBLE VERSES</h2>
+          </div>
+          <p>Nehemiah 8:10 Do not grieve, for the joy of the Lord is your strength. Isaiah 41:10 So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand. Exodus 15:2 The Lord is my strength and my song; he has given me victory.</p>
+          <a href="#"><input class="btn" type="submit" name="" value="GO to BIBLE VERSES"><br></a>
+        </div>
 
 
+        <footer>
+          <a href="https://www.instagram.com/aristidezabsore/" target="_blank">
+            <i class="fab fa-instagram"></i>
+         </a>
+          <a href="https://www.linkedin.com/in/pegwende-p-zabsore/" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://www.facebook.com/aristide.zabsore" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://web.whatsapp.com/" target="_blank">
+            <i class="fab fa-whatsapp-square"></i>
+          </a>
+        </footer>
 
-    <h2>YOUR FAVORITES QUOTES</h2>
-    <p>To reinforce your ideas: The main reason to quote material in your speech is to reinforce your words. A quotation offers a second voice that echoes your thoughts, beliefs, and claims. They said it better: Quotations provide a better way of saying things. They give you a more concise, memorable phrasing for an idea</p>
-    <a href="#"><input type="submit" name="" value="GO to QUOTES"></a><br>
-    <h2>BIBLE VERSES</h2>
-    <p>Nehemiah 8:10 Do not grieve, for the joy of the Lord is your strength. Isaiah 41:10 So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand. Exodus 15:2 The Lord is my strength and my song; he has given me victory.</p>
-    <a href="#"><input type="submit" name="" value="GO to BIBLE VERSES"><br></a>
+      </div>
+
   </body>
 </html>
