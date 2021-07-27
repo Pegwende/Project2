@@ -3,14 +3,47 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../edit.css">
+
+    <style media="screen">
+          body .container{
+            font-family: 'Indie Flower', cursive;
+            margin:auto 20%;
+          }
+          .container{
+            text-align: center;
+            background-color: grey;
+            width: 400px;
+            height: 400px;
+            padding: 20px;
+            border-radius: 20px;
+          }
+          .container h1{
+          font-size: 40px;
+          }
+
+          .container form input{
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 20px;
+            margin: 20px auto;
+          }
+          span{
+            font-weight: bold;
+            font-size: 30px;
+          }
+
+    </style>
+    
   </head>
   <body>
-    <h1>Edit Page</h1>
-    <form class="" action="/index/<%=list.id%>?_method=PUT" method="POST">
-      TASK:  <input type="text" name="task" placeholder="<%=list.task%>"><br>
-      TIME:  <input type="text" name="time" placeholder="<%=list.time%>"><br><br>
-      <input type="submit" name="" value="DONE">
-    </form>
-
+    <div class="container">
+      <h1>EDIT THIS TASK</h1>
+      <form class="" action="/index/<%=list.id%>?_method=PUT" method="POST">
+        <span>TASK:</span>  <input type="text" name="task" placeholder="<%=list.task%>"><br>
+        <span>TIME:</span>  <input type="text" name="time" placeholder="<%=list.time%>"><br><br>
+        <input id="btn" type="submit" name="" value="DONE">
+      </form>
+    </div>
   </body>
 </html>

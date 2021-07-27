@@ -1,0 +1,48 @@
+.container{
+text-align: center;
+font-family: 'Indie Flower', cursive;
+}
+
+.box1{
+  margin-bottom: 70px;
+  font-size: 30px;
+}
+.box1 h1{
+  color: red;
+  margin-bottom: -50px;
+}
+
+
+.box2{
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+.box2 h2{
+  color: red;
+  margin-bottom: -50px;
+}
+
+
+
+
+.box3{
+  display: flex;
+  justify-content:space-around;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.box3 input{
+  height: 50px;
+  width: 170px;
+  border-radius: 40px;
+  background-color: red;
+  transition-duration: 1s;
+}
+
+.box3 input:hover{
+  height: 60px;
+  width: 180px;
+  border-radius: 50px;
+  background-color: green;
+}

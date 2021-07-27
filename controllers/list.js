@@ -29,15 +29,6 @@ router.post('/', (req, res)=>{
 })
 
 
-router.get('/:id/edit', (req, res)=>{
-  List.findById(req.params.id, (error, foundList)=>{
-    res.render(
-      'edit.ejs',
-      {
-        list:foundList
-      })
-  })
-})
 
 
 router.put('/:id', (req, res)=>{
@@ -92,6 +83,14 @@ router.delete('/:id', (req, res)=>{
   })
 })
 
-
+router.get('/:id/edit', (req, res)=>{
+  List.findById(req.params.id, (error, foundList)=>{
+    res.render(
+      'edit.ejs',
+      {
+        list:foundList
+      })
+  })
+})
 
 module.exports = router

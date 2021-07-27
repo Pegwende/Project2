@@ -3,19 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="../show.css">
   </head>
   <body>
-    <h1>Show Page</h1>
 
-      <h2> GO: <%=lists.task%>  At: <%=lists.time%> </h2>
+      <div class="container">
 
-      <a href="/index/<%=lists._id%>/edit"><input type="submit" value="EDIT TASK"></a><br>
+        <div class="box1">
+          <h1>Task</h1>
+          <p><%=lists.task%></p>
+        </div>
 
-      <br><form class="" action="/index/<%=lists.id%>?_method=DELETE" method="POST">
-        <input type="submit" name="time" value="DELETE">
-      </form><br>
+        <div class="box2">
+          <h2>Time</h2>
+          <p><%=lists.time%></p>
+        </div>
 
-      <a href="/index"> <input type="submit" name="" value="RETURN TO TASK"> </a>
+        <div class="box3">
+          <a href="/index/<%=lists._id%>/edit"><input type="submit" value="EDIT TASK"></a><br>
 
+          <br><form class="" action="/index/<%=lists.id%>?_method=DELETE" method="POST">
+            <input type="submit" name="time" value="DELETE">
+          </form><br>
+
+          <a href="/index"> <input type="submit" name="" value="RETURN TO TASK"> </a>
+        </div>
+      </div>
   </body>
 </html>
