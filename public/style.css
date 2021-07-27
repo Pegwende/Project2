@@ -66,6 +66,8 @@ ul{
 .btn{
   background-color: rgba(300, 0, 0, 1);
   text-align: center;
+  border-radius: 10px;
+  padding: 15px 20px 15px 20px;
 }
 
 #remove{
@@ -87,19 +89,14 @@ footer{
   display: flex;
   justify-content: space-around;
   height: 100px;
-  margin: 50px auto;
+  margin: 40px auto;
   background-color: red;
   margin-bottom: 0;
 }
 
-i{
-  margin-top: 40px;
-  height: 300px;
-  width: 10px;
-  color: white;
-}
+footer a{
 
-i{
-  height: 100px;
+  color: white;
   width: 100px;
+  padding:40px 0 0 0 ;
 }
